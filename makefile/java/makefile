@@ -12,8 +12,12 @@ install_wilt_dapr:
 	#mvn clean install -Dmaven.test.skip=true
 	dapr uninstall
 	dapr init
-	dapr run --app-id Keyclock-Application --app-port 8080 --dapr-http-port 3005 \
- 			-- java -jar $(PATH_TO)/$(APP_NAME)
-	#no more coding here
+	dapr run --app-id wws --app-port 3000 --dapr-http-port 3005 \
+ 			-- java -jar $(PATH_TO)/$(APP_NAME) \
+ 		  com.ali.keyclockdemo.KeyclockDemoApplication -p 3000
+#no more coding here
 	#dapr dashboard
 	@echo "install end"
+
+down_dapr:
+	dapr uninstall
