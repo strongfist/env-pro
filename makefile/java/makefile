@@ -5,7 +5,7 @@ PATH_TO=./target
 
 install:
 	@echo "install begin"
-	mvn clean install -Dmaven.test.skip=true
+	mvn clean install -Dmaven.test.skip=true >>./mvn_install.log
 	@echo "install end"
 install_wilt_dapr:
 	@echo "install begin"
